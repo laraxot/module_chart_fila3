@@ -19,16 +19,9 @@ class ListMixedCharts extends ListRecords
 {
     use TransTrait;
 
-    public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
-
     protected static string $resource = MixedChartResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            CreateAction::make(),
-        ];
-    }
+    public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 
     public function table(Table $table): Table
     {
@@ -74,6 +67,13 @@ class ListMixedCharts extends ListRecords
     {
         return [
             DeleteBulkAction::make(),
+        ];
+    }
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
         ];
     }
 }

@@ -20,16 +20,9 @@ class ListCharts extends ListRecords
 {
     use TransTrait;
 
-    public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
-
     protected static string $resource = ChartResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            CreateAction::make(),
-        ];
-    }
+    public TableLayoutEnum $layoutView = TableLayoutEnum::LIST;
 
     public function table(Table $table): Table
     {
@@ -84,6 +77,13 @@ class ListCharts extends ListRecords
     {
         return [
             DeleteBulkAction::make(),
+        ];
+    }
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
         ];
     }
 }
